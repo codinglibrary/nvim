@@ -5,7 +5,7 @@
 " 
 "
 let $LEARNINGNOTES="R:\\LearningNotes\\"
-
+"
 " 设置行号
 set number
 " 设置颜色主题
@@ -19,6 +19,8 @@ set pastetoggle=<F2>
 "新建标签页
 nnoremap <C-n> :tabnew newTab
 " 缩进问题
+inoremap <tab> <space><space><space><space>
+inoremap {<CR> {<CR><CR><backspace>}<up><tab>
 set tabstop=4 "设定tab宽度为4个字符
 set shiftwidth=4 "设定自动缩进为4个字符
 " 高亮搜索
@@ -37,8 +39,11 @@ set foldmethod=indent
 "
 " 一些方便的映射
 let mapleader=','
-let g:mapleader=","
-
+let g:mapleader=','
+inoremap <A-l> <right>
+inoremap <A-k> <up>
+inoremap <A-j> <down>
+inoremap <A-h> <left>
 "使用jj进入normal模式
 inoremap jj <esc>`^
 "使用leader+w直接保存
@@ -108,6 +113,11 @@ let g:tagbar_sort = 0                   "设置标签不排序，默认排序
 
 " MarkDown插件
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+
+
+
+
 " MarkDown配置
 "---------------------------------------------------------------------------
 " set to 1, nvim will open the preview window after entering the markdown buffer
@@ -143,7 +153,7 @@ let g:mkdp_open_ip = ''
 
 " specify browser to open preview page
 " default: ''
-let g:mkdp_browser = ''
+let g:mkdp_browser = 'chrome'
 
 " set to 1, echo preview page url in command line when open preview page
 " default is 0
@@ -211,6 +221,26 @@ let g:mkdp_filetypes = ['markdown']
 nmap <F5> <Plug>MarkdownPreview
 nmap <F6> <Plug>MarkdownPreviewStop
 nmap <F7> <Plug>MarkdownPreviewToggle
+"
+"
+"MarkDown语法，映射快捷键
+"
+"加粗
+inoremap <A-1> ****<left><left>
+"斜体
+inoremap <A-2> **<left>
+"粗斜体
+inoremap <A-3> ******<left><left><left> 
+"删除线
+inoremap <A-4> ~~~~<left><left>
+"任务列表
+inoremap <A-5> - [<space>]<space>
+"代码块
+inoremap <A-6> ``````<left><left><left> 
+"代码
+inoremap <A-7> ``<left>
+"下划线,html表示
+inoremap <A-8> </u<left><backspace><right>></u><left><left><left><left>
 "---------------------------------------------------------------------------
 
 
