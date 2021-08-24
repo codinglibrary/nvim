@@ -11,7 +11,7 @@ set number
 " 设置颜色主题
 "colorscheme slate
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 " 按F2进入粘贴模式
 set pastetoggle=<F2>
@@ -59,9 +59,6 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-
-" 映射
-nnoremap <Space> viw
 
 " 插入模式下删除整行
 inoremap <C-d> <Esc>ddi
@@ -233,7 +230,7 @@ inoremap <A-2> **<left>
 inoremap <A-3> ******<left><left><left> 
 "删除线
 inoremap <A-4> ~~~~<left><left>
-"任务列表
+"多选框
 inoremap <A-5> - [<space>]<space>
 "代码块
 inoremap <A-6> ``````<left><left><left> 
@@ -241,6 +238,19 @@ inoremap <A-6> ``````<left><left><left>
 inoremap <A-7> ``<left>
 "下划线,html表示
 inoremap <A-8> </u<left><backspace><right>></u><left><left><left><left>
+" 引用块
+inoremap <A-9> ><space>
+nnoremap <A-9> I><space><esc>
+
+"三级标题
+inoremap <C-1> ###<space>
+"四级标题
+inoremap <C-2> ####<space>
+"五级标题
+inoremap <C-3> #####<space>
+"六级标题
+inoremap <C-4> ######<space>
+
 "---------------------------------------------------------------------------
 
 
