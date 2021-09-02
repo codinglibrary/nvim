@@ -243,7 +243,7 @@ inoremap <A-9> ><space>
 nnoremap <A-9> I><space><esc>
 "空格（一个汉字的宽度）
 inoremap <A-0> &emsp;
-nnoremap <A-0> a&emsp;<esc>
+nnoremap <A-0> i&emsp;&emsp;<esc>
 
 "三级标题
 inoremap <C-1> ###<space>
