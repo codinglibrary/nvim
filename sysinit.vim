@@ -234,8 +234,8 @@ inoremap <A-4> ~~~~<left><left>
 inoremap <A-5> - [<space>]<space>
 "代码块
 inoremap <A-6> ``````<left><left><left> 
-"代码
-inoremap <A-7> ``<left>
+"居中文字 https://blog.csdn.net/m0_37925202/article/details/80461714
+inoremap <A-7> <center></center><left><left><left><left><left><left><left><left><left>
 "下划线,html表示
 inoremap <A-8> </u<left><backspace><right>></u><left><left><left><left>
 " 引用块
