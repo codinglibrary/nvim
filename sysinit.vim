@@ -228,14 +228,14 @@ inoremap <A-1> ****<left><left>
 inoremap <A-2> **<left>
 "粗斜体
 inoremap <A-3> ******<left><left><left> 
-"删除线
-inoremap <A-4> ~~~~<left><left>
 "多选框
-inoremap <A-5> - [<space>]<space>
-"代码块
-inoremap <A-6> ``````<left><left><left> 
-"代码
-inoremap <A-7> ``<left>
+inoremap <A-4> - [<space>]<space>
+"全局字体样式
+inoremap <A-5> <font face="仿宋" size=4 color="SaddleBrown">    
+"字体样式
+inoremap <A-6> <font face="Times" color="cadetblue">
+"居中
+inoremap <A-7> <center></center><left><left><left><left><left><left><left><left><left>
 "下划线,html表示
 inoremap <A-8> </u<left><backspace><right>></u><left><left><left><left>
 " 引用块
