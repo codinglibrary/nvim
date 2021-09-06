@@ -229,19 +229,12 @@ inoremap <A-2> **<left>
 "粗斜体
 inoremap <A-3> ******<left><left><left> 
 "多选框
-<<<<<<< HEAD
 inoremap <A-4> - [<space>]<space>
 "全局字体样式
 inoremap <A-5> <font face="仿宋" size=4 color="SaddleBrown">    
 "字体样式
 inoremap <A-6> <font face="Times" color="cadetblue">
-"居中
-=======
-inoremap <A-5> - [<space>]<space>
-"代码块
-inoremap <A-6> ``````<left><left><left> 
-"居中文字 https://blog.csdn.net/m0_37925202/article/details/80461714
->>>>>>> 258665f3352179e885fd3ddce3dd465ebd0a6487
+"居中文字
 inoremap <A-7> <center></center><left><left><left><left><left><left><left><left><left>
 "下划线,html表示
 inoremap <A-8> </u<left><backspace><right>></u><left><left><left><left>
