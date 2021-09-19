@@ -4,6 +4,12 @@
 "一、使用markdown时，注意文件打开方式，此文使用的是【在command下输入：/mkdp_browser】    
 "二、使用latex时，
 "    1.安装latexmk包
+"        安装latexmk有两个主要步骤，可以参考这个网页：
+"        1)安装perl
+"        在 http://strawberryperl.com/ 可以找到适合windows的perl安装包，下载安装即可。 安装好后可以在windows powershell 或者cmd 输入 perl -v，如果有版本信息说明安装成功，否则继续查找错误原因。
+"        2)安装 MikTeX Package Manager
+"        在 https://miktex.org/ 可以找到安装包，下载安装
+"
 "    2.注意文件打开方式【\vimtex_view_general_viewer】
 "三、将各插件安装【:PlugInstall】
 
@@ -19,7 +25,7 @@
 let $HUAWEImydocs="R:\\projects\.qingjiu\\MyDocs\\"
 let $HUAWEIonedrive="C:\\Users\\梁寒\\OneDrive\\临时文件夹\\"
 
-let $MIonedirve="C:\\Users\\"
+let $MIonedirve="C:\\Users\\David\\OneDrive\\临时文件夹\\"
 "
 " 设置行号
 set number
@@ -150,6 +156,9 @@ nmap ,g :NERDTreeToggle<cr>
 
 " MarkDown配置
 "---------------------------------------------------------------------------
+"problem1:Pre build and node is not found 
+"try :call mkdp#util#install() to reinstall the pre build.
+"----------------------------------------------------
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
 let g:mkdp_auto_start = 0
@@ -284,8 +293,9 @@ inoremap <C-4> ######<space>
 "
 "
 "Latex插件配置------------
+set encoding=utf8
 let g:tex_flavor='latex'
-let g:vimtex_compiler_latexmk=1
+"let g:vimtex_compiler_latexmk=
 
 "帮助文档https://sspai.com/post/64080,https://jdhao.github.io/2019/03/26/nvim_latex_write_preview/
 "latex阅读器设置
