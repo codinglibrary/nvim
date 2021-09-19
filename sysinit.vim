@@ -34,6 +34,15 @@ set number
 syntax enable
 set background=light
 colorscheme solarized
+let g:solarized_termcolors=256
+let g:solarized_termtrans=0
+let g:solarized_degrade=0
+let g:solarized_bold=1
+let g:solarized_underline=1
+let g:solarized_italic=1
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
+
 " 按F2进入粘贴模式
 set pastetoggle=<F2>
 
@@ -103,7 +112,7 @@ inoremap <C-d> <Esc>ddi
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
-
+Plug 'alteration/solaried'
 Plug 'https://github.com/mhinz/vim-startify.git',
 
 Plug 'https://github.com/tomasr/molokai.git'
