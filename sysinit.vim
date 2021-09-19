@@ -1,10 +1,25 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"注意：：
+"Attention：：
+"一、使用markdown时，注意文件打开方式，此文使用的是【在command下输入：/mkdp_browser】    
+"二、使用latex时，
+"    1.安装latexmk包
+"    2.注意文件打开方式【\vimtex_view_general_viewer】
+"三、将各插件安装【:PlugInstall】
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 " stdpath('config')=C:\Users\小米笔记本\AppData\Local\nvim
 " stdpath('data')=C:\Users\小米笔记本\AppData\Local\nvim-data
 "
 " 常用设置
 " 
 "
-let $LEARNINGNOTES="R:\\LearningNotes\\"
+let $HUAWEImydocs="R:\\projects\.qingjiu\\MyDocs\\"
+let $HUAWEIonedrive="C:\\Users\\梁寒\\OneDrive\\临时文件夹\\"
+
+let $MIonedirve="C:\\Users\\"
 "
 " 设置行号
 set number
@@ -77,6 +92,7 @@ inoremap <C-d> <Esc>ddi
 "
 "
 "
+"---------------------------------------------------------------------
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
@@ -111,8 +127,25 @@ let g:airline#extensions#tabline#formatter = 'default'
 " MarkDown插件
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
+"Latex插件
+Plug 'lervag/vimtex'
+"
+"
+"
+"插件管理
+"
+"
+call plug#end()
+"---------------------------------------------------------------------------
+" Initialize plugin system
 
+" 插件相关配置
+" 禁止startify自动切换目录
+let g:startify_change_to_dir=0
 
+" nerdtree
+nmap ,v :NERDTreeFind<cr>
+nmap ,g :NERDTreeToggle<cr>
 
 
 " MarkDown配置
@@ -208,12 +241,6 @@ let g:mkdp_page_title = '「${name}」'
 " these filetypes will have MarkdownPreview... commands
 let g:mkdp_filetypes = ['markdown']
 
-
-" normal/insert
-"<Plug>MarkdownPreview
-"<Plug>MarkdownPreviewStop
-"<Plug>MarkdownPreviewToggle
-
 " example
 nmap <F5> <Plug>MarkdownPreview
 nmap <F6> <Plug>MarkdownPreviewStop
@@ -254,23 +281,19 @@ inoremap <C-3> #####<space>
 "六级标题
 inoremap <C-4> ######<space>
 
-"---------------------------------------------------------------------------
+"
+"
+"Latex插件配置------------
+let g:tex_flavor='latex'
+let g:vimtex_compiler_latexmk=1
 
+"帮助文档https://sspai.com/post/64080,https://jdhao.github.io/2019/03/26/nvim_latex_write_preview/
+"latex阅读器设置
+let g:vimtex_view_general_viewer = 'SumatraPDF'
+"let g:vimtex_view_general_options
+"\ = '-reuse-instance -forward-search @tex @line @pdf'
+"let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 
+"let g:vimtex_quickfix_mode=0 "不自动弹出错误窗口 :copen"
+let g:Tex_Leader='`'
 
-
-" Initialize plugin system
-call plug#end()
-
-" 插件相关配置
-" 禁止startify自动切换目录
-let g:startify_change_to_dir=0
-
-" nerdtree
-nmap ,v :NERDTreeFind<cr>
-nmap ,g :NERDTreeToggle<cr>
-
-" 定义函数
-" func test()
-	
-" endfunc
