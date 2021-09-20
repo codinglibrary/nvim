@@ -291,12 +291,13 @@ inoremap <C-4> ######<space>
 "Latex插件配置------------
 set encoding=utf8
 let g:tex_flavor='latex'
-"let g:vimtex_compiler_latexmk=
+"let g:vimtex_compiler_latexmk=1
 "帮助文档https://sspai.com/post/64080,https://jdhao.github.io/2019/03/26/nvim_latex_write_preview/
 "latex阅读器设置
-let g:vimtex_view_general_viewer = 'SumatraPDF'
+let g:vimtex_view_general_viewer = 'zathura'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_progname='nvr'
 "let g:vimtex_view_general_options
 "\ = '-reuse-instance -forward-search @tex @line @pdf'
-"let g:vimtex_view_general_options_latexmk = '-reuse-instance'
-"let g:vimtex_quickfix_mode=0 "不自动弹出错误窗口 :copen"
+let g:vimtex_quickfix_mode=1 "自动弹出错误窗口 :copen"
 let g:Tex_Leader='`'
