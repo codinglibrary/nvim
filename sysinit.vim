@@ -113,6 +113,7 @@ inoremap <C-d> <Esc>ddi
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 Plug 'alteration/solaried'
+Plug 'https://github.com/altercation/vim-colors-solarized'
 Plug 'https://github.com/mhinz/vim-startify.git',
 
 Plug 'https://github.com/tomasr/molokai.git'
@@ -309,10 +310,35 @@ let g:tex_flavor='latex'
 "帮助文档https://sspai.com/post/64080,https://jdhao.github.io/2019/03/26/nvim_latex_write_preview/
 "latex阅读器设置
 let g:vimtex_view_general_viewer = 'SumatraPDF'
-"let g:vimtex_view_general_options
-"\ = '-reuse-instance -forward-search @tex @line @pdf'
-"let g:vimtex_view_general_options_latexmk = '-reuse-instance'
+let g:vimtex_view_general_options
+    \ = '-reuse-instance -forward-search @tex @line @pdf'
+let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 
-"let g:vimtex_quickfix_mode=0 "不自动弹出错误窗口 :copen"
-let g:Tex_Leader='`'
+let g:vimtex_quickfix_mode=0 "不自动弹出错误窗口 :copen"
+"pip install neovim-remote
+"Linting and syntax checking :pip install proselint
+" TOC settings
+let g:vimtex_toc_config = {
+      \ 'name' : 'TOC',
+      \ 'layers' : ['content', 'todo', 'include'],
+      \ 'resize' : 1,
+      \ 'split_width' : 50,
+      \ 'todo_sorted' : 0,
+      \ 'show_help' : 1,
+      \ 'show_numbers' : 1,
+      \ 'mode' : 2,
+      \}
+function! SetServerName()
+  if has('win32')
+    let nvim_server_file = $TEMP . "/curnvimserver.txt"
+  else
+    let nvim_server_file = "/tmp/curnvimserver.txt"
+  endif
+  let cmd = printf("echo %s > %s", v:servername, nvim_server_file)
+  call system(cmd)
+endfunction
 
+augroup vimtex_common
+    autocmd!
+    autocmd FileType tex call SetServerName()
+augroup END
